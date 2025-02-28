@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { ArrayMinSize, IsArray, IsInt, IsNotEmpty, IsNumber, IsPositive, IsString, MaxLength, Min, ValidateNested } from "class-validator";
+import { ArrayMinSize, IsArray, IsInt, IsNotEmpty, IsNumber, IsPositive, IsString, IsUrl, MaxLength, Min, ValidateNested } from "class-validator";
 
 export class CaracteristicasProdutoDTO {
     nome: string;
@@ -7,6 +7,7 @@ export class CaracteristicasProdutoDTO {
 }
 
 export class ImagensDTO {
+    @IsUrl()
     url: string;
     descricao: string;
 }
@@ -44,6 +45,6 @@ export class createProductDTO {
     categoria: string;
 
     dataCriacao: Date | string;
-    
+
     dataAtualizacao: Date | string;
 }
